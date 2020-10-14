@@ -8,3 +8,9 @@ $variable_float = 2.5; // <--- Assigned to a float
 $variable_bool = true; // <--- Assigned to a boolean
 
 // 2.) Example of performing simple calculations on variables/data
+// Adding integer and float and echoing result
+echo "$variable_int + $variable_float returns a float! \n";
+// Concatenating variable with raw string and echoing result
+echo "$variable_string" . " with this concatenated. \n";
+// Echoing the value of variable_bool value
+echo "$variable_bool \n";
