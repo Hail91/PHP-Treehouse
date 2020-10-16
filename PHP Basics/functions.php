@@ -6,7 +6,6 @@ function add($x, $y)
 {
     return $x + $y;
 };
-
 echo add(5, 10);
 echo "\n";
 // Global var to test anon function.
@@ -17,6 +16,5 @@ $global_v = 'Aaron';
 $greeting = function () use ($global_v) {
     echo "Hello $global_v!";
 };
-
 echo $greeting();
 echo "\n";
