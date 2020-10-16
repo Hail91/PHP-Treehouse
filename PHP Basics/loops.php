@@ -46,8 +46,8 @@ var_dump($bar); // NULL
 
 // ** foreach loop in PHP **
 $arr = array(1, 2, 3, 4);
-foreach ($arr as &$value) {
-    $value = $value * 2;
+foreach ($arr as $key => $value) {
+    $arr[$key] = $value * 2; // <--- Faster than creating reference with $value. (Assuming you are modifying values)
 }
 // $arr is now array(2, 4, 6, 8)
 print_r($arr);
