@@ -96,7 +96,15 @@
         }
         // Specify what output user will see if we try to simply echo the class object directly.
         public function __toString() {
-            return $this->getTitle();
+            // __CLASS__ is an example of a 'magic' constant, these constants can do
+            // Special things in PHP that are often useful.
+            $output = "You are calling a " . __CLASS__ . " object with the title \"";
+            $output .= $this->getTitle() . "\"";
+            $output .= "\nIt is stored in " . basename(__FILE__) . " at " .  __DIR__ . ".";
+            $output .= "\nThis display is from the line " . __LINE__ . " in method " . __METHOD__;
+            $output .= "\nThe following methods are available for objects in this class: \n";
+            $output .= implode("\n", get_class_methods(__CLASS__));
+            return $output;
         }
     }
 ?>

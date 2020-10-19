@@ -24,4 +24,12 @@
             }
             return $output;
         }
+        // Return information about the class object to the user.
+        public function __toString() {
+            // __CLASS__ is an example of a 'magic' constant, these constants can do
+            // Special things in PHP that are often useful.
+            $output = "\nThe following methods are available for" . " " . __CLASS__ . " " . "objects in this class: \n";
+            $output .= implode("\n", get_class_methods(__CLASS__));
+            return $output;
+        }
     }

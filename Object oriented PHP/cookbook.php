@@ -23,11 +23,15 @@ $first_recipe->addTag("Main Course");
 // echo implode("\n", $first_recipe->getTags());
 // echo "\n";
 // Call static displayRecipe method to display the first recipe again.
-echo Render::displayRecipe($first_recipe);
-echo "\n";
+
+// echo Render::displayRecipe($first_recipe);
+// echo "\n";
+
 // Code below is example of toString() method in use.
 echo $first_recipe;
 echo "\n";
+
+echo new Render();
 
 // $second_recipe = new Recipe();
 // $second_recipe->source = "New Person";
