@@ -2,8 +2,7 @@
 include "./classes.php";
 include "./render_recipe.php";
 
-$first_recipe = new Recipe();
-$first_recipe->setTitle("my first recipe");
+$first_recipe = new Recipe('my first recipe');
 $first_recipe->addIngredient('egg', 1);
 $first_recipe->addIngredient('flour', 2, 'cup');
 
@@ -25,6 +24,9 @@ $first_recipe->addTag("Main Course");
 // echo "\n";
 // Call static displayRecipe method to display the first recipe again.
 echo Render::displayRecipe($first_recipe);
+echo "\n";
+// Code below is example of toString() method in use.
+echo $first_recipe;
 echo "\n";
 
 // $second_recipe = new Recipe();

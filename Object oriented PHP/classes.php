@@ -29,7 +29,10 @@
         // Methods
         // Format title data coming in (Setter)
         public function setTitle($title) {
-            $this->title = ucwords($title);
+            if(empty($title)) {
+                $this->title = null;
+            }
+            else $this->title = ucwords($title);
         }
         // Getting method to retrieve recipe title. (Getter)
         public function getTitle() {
@@ -84,6 +87,16 @@
         // Get source (Getter)
         public function getSource() {
             return $this->source;
+        }
+        // ** Magic Methods ** <-- Called with the double underscore prefix (__)
+        // This method will allow you to add a title to the recipe at the time
+        // Of instantiation (hence the 'construct' name).
+        public function __construct($title = null) {
+            $this->setTitle($title);
+        }
+        // Specify what output user will see if we try to simply echo the class object directly.
+        public function __toString() {
+            return $this->getTitle();
         }
     }
 ?>
