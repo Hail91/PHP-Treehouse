@@ -7,6 +7,7 @@
             - Private <-- Limit direct access (need to use method to change)
             - Protected
         */
+        // Getter and Setter methods must be used when accessing private properties outside of a class.
         private $title;
         private $measurements = [
             "tsp",
@@ -26,9 +27,6 @@
         private $source = "Aaron Gillies";
 
         // Methods
-        public function displayRecipe() {
-            return $this->title . " by " . $this->source;
-        }
         // Format title data coming in (Setter)
         public function setTitle($title) {
             $this->title = ucwords($title);
