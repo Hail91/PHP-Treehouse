@@ -39,4 +39,13 @@ name, making them available in all functions or methods by default! */
         echo '<p>' . $name . '</p>';
         echo '<p>' . $lang . '</p>';
     }
+
+    /* Use the $_GET method if the information you’ll be passing is not sensitive 
+    or a security vulnerability. For example, a search function is a common use 
+    case which will pass the data through the URL. */
+
+    /* Use the $_POST superglobal if you want to send sensitive data to a file or 
+    database in a more secure way. For example, when passing a secure user password 
+    it's best to do so with a $_POST request that doesn't display the data in a 
+    query string in the URL. */
 ?>
