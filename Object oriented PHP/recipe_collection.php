@@ -34,4 +34,14 @@ class RecipeCollection {
         }
         return $titles;
     }
+    // Filter recipes by tag
+    public function filterByTag($tag) {
+        $taggedRecipes = [];
+        foreach($this->recipes as $recipe) {
+            if(in_array(strtolower($tag), $recipe->getTags())) {
+                $taggedRecipes[] = $recipe;
+            }
+        }
+        return $taggedRecipes;
+    }
 }
