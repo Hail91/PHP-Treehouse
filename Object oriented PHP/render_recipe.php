@@ -35,6 +35,18 @@
         // Method to show all the recipe titles in the collection.
         public static function listRecipes($titles) {
             asort($titles);
-            return implode("\n", $titles);
+            $output = "";
+            foreach($titles as $key => $title) {
+                if($output !== "") {
+                    $output .= "\n";
+                }
+                $output .= "[$key] $title";
+            }
+            return $output;
+        }
+        // Return all ingredients required
+        public static function listShopping($ingredient_list) {
+            ksort($ingredient_list);
+            return implode("\n", array_keys($ingredient_list));
         }
     }

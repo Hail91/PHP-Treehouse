@@ -45,5 +45,11 @@ $cookbook = new RecipeCollection('Aarons Recipes');
 $cookbook->addRecipe($first_recipe);
 echo "\n";
 // Show all recipe titles in Cookbook.
-echo Render::listRecipes($cookbook->getRecipeTitles());
-echo "\n";
+// echo Render::listShopping($cookbook->getCombinedIngredients());
+// echo "\n";
+
+// echo Render::listRecipes($cookbook->getRecipeTitles());
+// echo "\n";
+
+// echo Render::displayRecipe($cookbook->filterById(0));
+// echo "\n";
