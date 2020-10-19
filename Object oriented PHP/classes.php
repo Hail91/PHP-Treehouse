@@ -41,7 +41,7 @@
         // Method to add ingredients to recipe (Setter)
         public function addIngredient($item, $amount = null, $measure = null) {
             if($amount !== null && !is_float($amount) && !is_int($amount)) {
-                exit("The amount must be a float: " . gettype($amount) . " $amount given \n");
+                exit("The amount must be a numeric value: " . gettype($amount) . " $amount given \n");
             }
             if($measure !== null && !in_array(strtolower($measure), $this->measurements)) {
                 exit("Please enter a valid measurement: " . implode(", ", $this->measurements));
