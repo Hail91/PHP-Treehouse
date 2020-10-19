@@ -1,6 +1,7 @@
 <?php 
 include "./classes.php";
 include "./render_recipe.php";
+include "./recipe_collection.php";
 
 $first_recipe = new Recipe('my first recipe');
 $first_recipe->addIngredient('egg', 1);
@@ -38,3 +39,11 @@ echo new Render();
 // $second_recipe->setTitle("my second recipe");
 // echo $second_recipe->displayRecipe();
 // echo "\n";
+
+// Cookbook object
+$cookbook = new RecipeCollection('Aarons Recipes');
+$cookbook->addRecipe($first_recipe);
+echo "\n";
+// Show all recipe titles in Cookbook.
+echo Render::listRecipes($cookbook->getRecipeTitles());
+echo "\n";
