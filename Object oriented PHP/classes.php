@@ -19,11 +19,11 @@
             "quart",
             "gallon"
         ];
-        public $ingredients = [];
-        public $instructions = [];
-        public $yield;
-        public $tag = [];
-        public $source = "Aaron Gillies";
+        private $ingredients = [];
+        private $instructions = [];
+        private $yield;
+        private $tag = [];
+        private $source = "Aaron Gillies";
 
         // Methods
         public function displayRecipe() {
@@ -54,6 +54,38 @@
         // Return the recipe's ingredients
         public function getIngredients() {
             return $this->ingredients;
+        }
+        // Instructions methods...(Setter)
+        public function addInstructions($string) {
+            $this->instructions[] = $string;
+        }
+        // Get instructions (Getter)
+        public function getInstructions() {
+            return $this->instructions;
+        }
+        // Add Tags (Setter)
+        public function addTag($tag) {
+            $this->tags[] = strtolower($tag);
+        }
+        // Get tags (Getter)
+        public function getTags() {
+            return $this->tags;
+        }
+        // Set yield (Setter)
+        public function setYield($yield) {
+            $this->yield = $yield;
+        }
+        // Get yield (Getter)
+        public function getYield() {
+            return $this->yield;
+        }
+        // Set source (Setter)
+        public function setSource($source) {
+            $this->source = ucwords($source);
+        }
+        // Get source (Getter)
+        public function getSource() {
+            return $this->source;
         }
     }
 ?>
