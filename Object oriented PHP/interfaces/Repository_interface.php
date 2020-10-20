@@ -1,4 +1,7 @@
 <?php
+// ** LINKS **
+// http://treehouse-code-samples.s3.amazonaws.com/PHP/interfaces/interface_abstract_class_comparison.pdf
+
 // ** NOTES **
 /* Interfaces allow us to talk about requirements without the need for implementation 
 details. In other words, what do we need to be able to do with this object? This will 

@@ -1,6 +1,6 @@
 <?php
 // Example of using Iterator interface.
-class Collection implements Iterator, Countable {
+class Collection implements Collection_interface {
     protected $repo;
     public $collection;
 
@@ -35,5 +35,12 @@ class Collection implements Iterator, Countable {
     // Counts elements in array being passed in. (Returns count --> INT)
     public function count() {
         return count($this->collection);
+    }
+    // Retrieve description of collection item.
+    public function shortDescription() {
+        if(strlen($this->current()->details) < 510) {
+            return strip_tags($this->current()->details);
+        }
+        return strip_tags(substr($this->current()->details, 0, strpos($this->current()->details, ' ', 500))) . '...';
     }
 }
